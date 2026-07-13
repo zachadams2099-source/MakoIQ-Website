@@ -6,7 +6,7 @@ const DocCard = forwardRef<HTMLDivElement, { name: string; style?: React.CSSProp
       <div
         ref={ref}
         style={style}
-        className="absolute flex w-32 flex-col gap-1.5 rounded-md border border-white/10 bg-white/[0.06] p-3 shadow-lg shadow-black/20 backdrop-blur-sm sm:w-36"
+        className="absolute flex w-32 flex-col gap-1.5 rounded-md border border-white/10 bg-white/[0.06] p-3 opacity-40 shadow-lg shadow-black/20 backdrop-blur-sm sm:w-36"
       >
         <div className="h-1.5 w-3/4 rounded-full bg-white/25" />
         <div className="h-1.5 w-full rounded-full bg-white/15" />

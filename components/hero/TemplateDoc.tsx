@@ -25,11 +25,11 @@ const TemplateDoc = forwardRef<HTMLDivElement, TemplateDocProps>(({ className },
 
       <div className="mt-4 space-y-3">
         <div>
-          <div className="h-1.5 w-20 rounded-full bg-violet/50" />
+          <div data-fill-heading className="h-1.5 w-20 rounded-full bg-violet/50" />
           <div className="mt-2 space-y-1.5">
-            <div className="h-1.5 w-full rounded-full bg-text/10" />
-            <div className="h-1.5 w-11/12 rounded-full bg-text/10" />
-            <div className="h-1.5 w-4/5 rounded-full bg-text/10" />
+            <div data-fill-body className="h-1.5 w-full rounded-full bg-text/10" />
+            <div data-fill-body className="h-1.5 w-11/12 rounded-full bg-text/10" />
+            <div data-fill-body className="h-1.5 w-4/5 rounded-full bg-text/10" />
           </div>
         </div>
 
@@ -46,13 +46,13 @@ const TemplateDoc = forwardRef<HTMLDivElement, TemplateDocProps>(({ className },
             </div>
             {[0, 1, 2].map((row) => (
               <div key={row} className="contents">
-                <div className="bg-white px-2 py-1.5">
+                <div data-fill-row className="bg-white px-2 py-1.5">
                   <div className="h-1 w-10 rounded-full bg-text/15" />
                 </div>
-                <div className="bg-white px-2 py-1.5">
+                <div data-fill-row className="bg-white px-2 py-1.5">
                   <div className="h-1 w-6 rounded-full bg-text/15" />
                 </div>
-                <div className="bg-white px-2 py-1.5">
+                <div data-fill-row className="bg-white px-2 py-1.5">
                   <div className="h-1 w-6 rounded-full bg-text/15" />
                 </div>
               </div>
@@ -64,6 +64,7 @@ const TemplateDoc = forwardRef<HTMLDivElement, TemplateDocProps>(({ className },
           {[40, 65, 50, 80, 60, 90].map((h, i) => (
             <div
               key={i}
+              data-fill-bar
               style={{ height: `${h * 0.35}px` }}
               className="w-full rounded-t-sm bg-violet/40"
             />
@@ -71,8 +72,8 @@ const TemplateDoc = forwardRef<HTMLDivElement, TemplateDocProps>(({ className },
         </div>
 
         <div className="space-y-1.5 pt-1">
-          <div className="h-1.5 w-full rounded-full bg-text/10" />
-          <div className="h-1.5 w-3/4 rounded-full bg-text/10" />
+          <div data-fill-final className="h-1.5 w-full rounded-full bg-text/10" />
+          <div data-fill-final className="h-1.5 w-3/4 rounded-full bg-text/10" />
           <span
             data-cursor
             className="ml-0.5 inline-block h-3 w-[2px] translate-y-0.5 bg-purple"
