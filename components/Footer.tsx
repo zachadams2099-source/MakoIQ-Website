@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const links = [
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Examples", href: "/#examples" },
   { label: "Pricing", href: "/pricing" },
   { label: "Security", href: "/security" },
   { label: "Terms", href: "/terms" },
@@ -9,6 +11,8 @@ const links = [
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-ink py-12">
       <div className="container-page flex flex-col items-center gap-6 border-t border-white/10 pt-10 text-center md:flex-row md:justify-between md:text-left">
@@ -22,7 +26,7 @@ export default function Footer() {
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {links.map((link) => (
             <Link
-              key={link.href}
+              key={link.label}
               href={link.href}
               className="text-sm text-white/60 transition-colors hover:text-white"
             >
@@ -31,7 +35,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        <p className="font-mono text-xs text-white/40">© 2026 MakoIQ</p>
+        <p className="font-mono text-xs text-white/40">© {year} MakoIQ</p>
       </div>
     </footer>
   );

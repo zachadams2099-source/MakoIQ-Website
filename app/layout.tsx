@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Newsreader, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import AuthModalProvider from "@/components/auth/AuthModalProvider";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -24,10 +25,24 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const title = "MakoIQ | Finished Investment Documents From Your Source Materials";
+const description =
+  "MakoIQ turns RFPs, due diligence questionnaires, underwriting materials, and investment documents into finished deliverables connected to their source material.";
+
 export const metadata: Metadata = {
-  title: "MakoIQ — Your documents in. Your deliverable out.",
-  description:
-    "Drop in your source materials. Drop in the document your firm already produces. MakoIQ returns the finished version in your exact format, in minutes.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    siteName: "MakoIQ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +52,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${inter.variable} ${plexMono.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <AuthModalProvider>{children}</AuthModalProvider>
+      </body>
     </html>
   );
 }
