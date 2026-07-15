@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import InteractiveHero from "@/components/hero/InteractiveHero";
+import Hero3D from "@/components/hero/Hero3D";
+import TrySample from "@/components/sections/TrySample";
 import HeadToHead from "@/components/sections/HeadToHead";
 import UseCaseGallery from "@/components/sections/UseCaseGallery";
 import HowItWorks from "@/components/HowItWorks";
@@ -20,7 +21,8 @@ export default function Home() {
     <SimulatorRunProvider>
       <Header />
       <main>
-        <InteractiveHero />
+        <Hero3D />
+        <TrySample />
         <HeadToHead />
         <UseCaseGallery />
         <HowItWorks />
