@@ -63,21 +63,7 @@ export default function ScrollReveals() {
     resizeObserver.observe(document.body);
 
     const ctx = gsap.context(() => {
-      // Head-to-head: headline halves slide in, divider draws itself.
-      const qqLeft = document.querySelector("[data-qq-left]");
-      const qqRight = document.querySelector("[data-qq-right]");
-      const qqDivider = document.querySelector("[data-qq-divider]");
-      if (qqLeft && qqRight) {
-        gsap.set(qqDivider, { scaleY: 0, transformOrigin: "center" });
-        gsap
-          .timeline({
-            scrollTrigger: { trigger: qqLeft, start: "top 82%", toggleActions: "play none none reverse" },
-          })
-          .fromTo(qqLeft, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "expo.out" }, 0)
-          .fromTo(qqRight, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "expo.out" }, 0)
-          .to(qqDivider, { scaleY: 1, duration: 0.5, ease: "power2.out" }, 0.2);
-      }
-
+      fadeReveal(document.querySelector("[data-htoh-intro]"));
       staggerReveal("[data-htoh-row]");
       staggerReveal("[data-usecase-card]");
       staggerReveal("[data-hiw-card]");

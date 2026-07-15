@@ -10,15 +10,10 @@ export default function HeadToHead() {
   return (
     <section className="bg-paper py-24 md:py-32">
       <div className="container-page">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="flex flex-col items-center justify-center gap-3 font-serif text-[1.75rem] font-medium leading-[1.2] text-text sm:text-4xl md:flex-row md:gap-6 md:text-[2.75rem]">
-            <span data-qq-left className="md:text-right">
-              Do you need answers from documents,
-            </span>
-            <span aria-hidden data-qq-divider className="hidden h-12 w-px shrink-0 bg-line md:block lg:h-16" />
-            <span data-qq-right className="md:text-left">
-              or do you need documents produced?
-            </span>
+        <div data-htoh-intro className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow text-violet">The comparison</p>
+          <h2 className="mt-3 font-serif text-2xl font-medium leading-tight text-text sm:text-3xl">
+            Side by side, the difference is the deliverable.
           </h2>
         </div>
 
